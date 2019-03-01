@@ -3,13 +3,13 @@ This is a Segment Routing Bootcamp material repository
 
 Python 
 ------------------------------------------------
-	node-1-bgp-lu-prefix-sid.py
-	node-1-intf-rsvp-ldp.py
-node-1-microloop.py
-node-1-migrate-to-sr.py
-node-1-multi-domain.py
-node-1-no-bgp-lu-prefix-sid.py
-node-1-no-rsvpte-4.py
+  node-1-bgp-lu-prefix-sid.py
+  node-1-intf-rsvp-ldp.py
+  node-1-microloop.py
+  node-1-migrate-to-sr.py
+  node-1-multi-domain.py
+  node-1-no-bgp-lu-prefix-sid.py
+  node-1-no-rsvpte-4.py
 node-1-no-sr-mapping.py
 node-1-no-srte-bsid-90001-to-node-4.py
 node-1-rsvpte-4.py

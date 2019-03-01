@@ -1,4 +1,4 @@
-# sr-bootcamp
+# Segment Routing Bootcamp
 This is a Segment Routing Bootcamp material repository
 
 	python node-1-bgp-lu-prefix-sid.py 

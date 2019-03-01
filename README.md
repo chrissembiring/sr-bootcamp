@@ -3,7 +3,8 @@ This is a Segment Routing Bootcamp material repository
 
 Python 
 ------------------------------------------------
-node-1-bgp-lu-prefix-sid.py /n
+node-1-bgp-lu-prefix-sid.py
+
 node-1-intf-rsvp-ldp.py
 node-1-microloop.py
 node-1-migrate-to-sr.py

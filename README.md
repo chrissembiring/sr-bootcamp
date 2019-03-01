@@ -11,7 +11,7 @@ This is a Segment Routing Bootcamp material repository
 
 ![alt text](https://github.com/hinwoto/sr-bootcamp/blob/master/topo.png)
 
-Python 
+Python List
 ------------------------------------------------
  	node-1-bgp-lu-prefix-sid.py
  	node-1-intf-rsvp-ldp.py
@@ -111,7 +111,7 @@ Python
 End of Python List
 ------------------------------------------------
 
-Config TXT
+Config TXT List
 ------------------------------------------------
 	node-1-bgp-lu-prefix-sid.txt
 	node-1-intf-rsvp-ldp.txt

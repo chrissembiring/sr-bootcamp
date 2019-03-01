@@ -1,0 +1,19 @@
+segment-routing
+ traffic-eng
+  segment-list 5-6-7
+   index 10 mpls label 16006
+   index 20 mpls label 16007
+   index 30 mpls label 74
+  !
+  policy c14-node7
+   color 14 end-point ipv4 1.1.1.4
+   candidate-paths
+    preference 100
+     explicit segment-list 5-6-7
+     !
+    !
+   !
+  !
+ !
+!
+end

@@ -1,0 +1,34 @@
+rsvp
+ interface GigabitEthernet0/0/0/0
+ !
+ interface GigabitEthernet0/0/0/1
+ !
+ interface GigabitEthernet0/0/0/2
+ !
+ interface GigabitEthernet0/0/0/3
+ 
+ interface GigabitEthernet0/0/0/4
+ !
+!
+mpls traffic-eng
+ interface GigabitEthernet0/0/0/0
+ !
+ interface GigabitEthernet0/0/0/1
+  admin-weight 1
+ !
+ interface GigabitEthernet0/0/0/2
+ !
+ interface GigabitEthernet0/0/0/3
+ !
+!
+mpls ldp
+ router-id 1.1.1.1
+ address-family ipv4
+  label
+   local  
+    no allocate for no_ldp
+   !
+  !
+ !
+!
+end

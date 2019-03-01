@@ -1,0 +1,21 @@
+route-policy SID($SID)
+  set label-index $SID
+end-policy
+!
+router bgp 65000
+ ibgp policy out enforce-modifications
+ address-family ipv4 unicast
+  network 1.1.1.5/32 route-policy SID(5)
+  allocate-label all
+ !
+ neighbor-group RR-services-group
+  no address-family ipv4 unicast
+ !
+ neighbor 1.1.1.1
+  remote-as 65000
+  update-source Loopback0
+  address-family ipv4 labeled-unicast
+  !
+ !
+!
+end

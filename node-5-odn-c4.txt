@@ -1,0 +1,14 @@
+segment-routing
+ traffic-eng
+  on-demand color 4
+   dynamic
+    pcep
+    !
+    metric
+     type te
+    !
+   !
+  !
+ !
+!
+end

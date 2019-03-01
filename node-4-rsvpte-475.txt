@@ -1,0 +1,12 @@
+explicit-path name 4-7-5
+ index 10 next-address strict ipv4 unicast 10.4.7.7
+ index 20 next-address loose ipv4 unicast 1.1.1.5
+!
+interface tunnel-te475
+ ipv4 unnumbered Loopback0
+ autoroute announce
+ !
+ destination 1.1.1.5
+ path-option 4 explicit name 4-7-5
+!
+end

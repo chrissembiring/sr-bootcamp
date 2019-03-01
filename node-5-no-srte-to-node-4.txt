@@ -1,0 +1,6 @@
+segment-routing
+ traffic-eng
+  no policy node-4
+ !
+!
+end

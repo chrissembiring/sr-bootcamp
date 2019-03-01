@@ -1,0 +1,109 @@
+vrf red
+ address-family ipv4 unicast
+  import route-target
+   45:45
+  !
+  export route-target
+   45:45
+  !
+ !
+!
+vrf blue
+ address-family ipv4 unicast
+  import route-target
+   450:450
+  !
+  export route-target
+   450:450
+  !
+ !
+!
+interface Loopback4
+ vrf red
+ ipv4 address 4.4.4.4 255.255.255.255
+!
+interface Loopback14
+ vrf blue 
+ ipv4 address 14.14.14.14 255.255.255.255
+!
+interface Loopback40
+ vrf red
+ ipv4 address 40.40.40.40 255.255.255.255
+!
+interface Loopback44
+ vrf red
+ no ipv4 address 1.1.1.44 255.255.255.255
+ ipv4 address 44.44.44.44 255.255.255.255
+ no shutdown
+!
+interface Loopback140
+ vrf blue
+ ipv4 address 140.140.140.140 255.255.255.255
+!
+interface Loopback144
+ vrf blue
+ ipv4 address 144.144.144.144 255.255.255.255
+!
+!
+extcommunity-set opaque 5
+  5
+end-set
+!
+extcommunity-set opaque 15
+  15
+end-set
+!
+extcommunity-set opaque 50
+  50
+end-set
+!
+extcommunity-set opaque 55
+  55
+end-set
+!
+extcommunity-set opaque 150
+  150
+end-set
+!
+extcommunity-set opaque 155
+  155
+end-set
+!
+route-policy SET_COLOR_IN
+  if rd in (45:45) and destination in (5.5.5.5/32) then
+    set extcommunity color 5
+  elseif rd in (45:45) and destination in (50.50.50.50/32) then
+    set extcommunity color 5
+  elseif rd in (45:45) then
+    set extcommunity color 5
+  elseif rd in (450:450) and destination in (15.15.15.15/32) then
+    set extcommunity color 15
+  elseif rd in (450:450) and destination in (150.150.150.150/32) then
+    set extcommunity color 150
+  elseif rd in (450:450) then
+    set extcommunity color 155
+  else
+    pass
+  endif
+end-policy
+!
+router bgp 65000
+ neighbor-group RR-services-group
+  address-family vpnv4 unicast
+   route-policy SET_COLOR_IN in
+  !
+ !
+ vrf red
+  rd 45:45
+  address-family ipv4 unicast
+   redistribute connected
+  !
+ !
+ vrf blue
+  rd 450:450
+  address-family ipv4 unicast
+   redistribute connected
+  !
+ !
+!
+end

@@ -1,0 +1,13 @@
+explicit-path name 1-2-4
+ index 10 next-address strict ipv4 unicast 10.1.2.2
+ index 20 next-address strict ipv4 unicast 10.2.4.4
+!
+interface tunnel-te4
+ ipv4 unnumbered Loopback0
+ autoroute announce
+ !
+ destination 1.1.1.4
+ binding-sid mpls label 124
+ path-option 4 explicit name 1-2-4
+!
+end

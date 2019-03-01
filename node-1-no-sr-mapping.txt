@@ -1,0 +1,15 @@
+router isis 1
+ address-family ipv4 unicast
+  no segment-routing prefix-sid-map advertise-local
+ !
+!
+segment-routing
+ mapping-server
+  prefix-sid-map
+   address-family ipv4
+    no 1.1.1.2/32 2 range 3
+   !
+  !
+ !
+!
+end

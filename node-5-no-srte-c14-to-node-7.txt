@@ -1,0 +1,7 @@
+segment-routing
+ traffic-eng
+  no segment-list 5-6-7
+  no policy c14-node7
+ !
+!
+end

@@ -1,0 +1,36 @@
+router ospf 1
+ router-id 1.1.1.3
+ segment-routing mpls
+ segment-routing forwarding mpls
+ segment-routing sr-prefer
+ redistribute static
+ address-family ipv4 unicast
+ area 0
+  mpls traffic-eng
+  interface Loopback0
+   prefix-sid absolute 16003
+  !
+  interface GigabitEthernet0/0/0/0
+   network point-to-point
+   fast-reroute per-prefix
+   fast-reroute per-prefix ti-lfa enable
+  !
+  interface GigabitEthernet0/0/0/1
+   network point-to-point
+   fast-reroute per-prefix
+   fast-reroute per-prefix ti-lfa enable
+  !
+  interface GigabitEthernet0/0/0/2
+   network point-to-point
+   fast-reroute per-prefix
+   fast-reroute per-prefix ti-lfa enable
+  !       
+  interface GigabitEthernet0/0/0/3
+   network point-to-point
+   fast-reroute per-prefix
+   fast-reroute per-prefix ti-lfa enable
+  !
+ !
+ mpls traffic-eng router-id Loopback0
+!
+end

@@ -1,0 +1,17 @@
+rsvp
+ no interface GigabitEthernet0/0/0/0
+ no interface GigabitEthernet0/0/0/1
+ no interface GigabitEthernet0/0/0/2
+ no interface GigabitEthernet0/0/0/3
+ no interface GigabitEthernet0/0/0/4
+!
+mpls ldp
+ address-family ipv4
+  label
+   local
+    allocate for no_ldp
+   !
+  !
+ !
+!
+end

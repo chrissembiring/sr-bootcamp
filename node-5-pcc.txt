@@ -1,0 +1,14 @@
+segment-routing
+ traffic-eng
+  maximum-sid-depth 5
+  pcc
+   source-address ipv4 1.1.1.5
+   pce address ipv4 1.1.1.201
+    precedence 50
+    password encrypted 060506324F41
+   !
+   report-all
+  !
+ !
+!
+end

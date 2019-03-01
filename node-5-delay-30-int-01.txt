@@ -1,0 +1,6 @@
+mpls traffic-eng
+ interface GigabitEthernet0/0/0/1
+  admin-weight 30
+ !
+!
+end

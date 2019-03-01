@@ -1,0 +1,20 @@
+segment-routing
+ traffic-eng
+  segment-list 1-7-3-2-4
+   index 10 mpls label 16007
+   index 20 mpls label 16002
+   index 30 mpls label 16004
+  !
+  policy node-4
+   binding-sid mpls 90001
+   color 4 end-point ipv4 1.1.1.4
+   candidate-paths
+    preference 100
+     explicit segment-list 1-7-3-2-4
+     !
+    !
+   !
+  !
+ !
+!
+end

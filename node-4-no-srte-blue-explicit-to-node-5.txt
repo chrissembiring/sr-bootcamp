@@ -1,0 +1,7 @@
+segment-routing
+ traffic-eng
+  no segment-list 4-5
+  no policy node-15
+ !
+!
+end

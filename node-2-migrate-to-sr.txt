@@ -1,0 +1,26 @@
+router isis 1
+ address-family ipv4 unicast
+  segment-routing mpls
+ !
+ interface Loopback0
+  address-family ipv4 unicast
+   prefix-sid absolute 16002
+  !
+ !
+!
+rsvp
+ no interface GigabitEthernet0/0/0/0
+ no interface GigabitEthernet0/0/0/1
+ no interface GigabitEthernet0/0/0/2
+ no interface GigabitEthernet0/0/0/3
+!
+mpls ldp
+ address-family ipv4
+  label
+   local
+    allocate for no_ldp
+   !
+  !
+ !
+!
+end 

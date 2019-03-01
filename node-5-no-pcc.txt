@@ -1,0 +1,8 @@
+segment-routing
+ traffic-eng
+  pcc
+   no pce address ipv4 1.1.1.201
+  !
+ !
+!
+end

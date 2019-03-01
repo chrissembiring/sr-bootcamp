@@ -1,0 +1,3 @@
+no explicit-path name 1-2-4
+no interface tunnel-te4
+end

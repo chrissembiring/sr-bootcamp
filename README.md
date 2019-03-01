@@ -98,7 +98,7 @@ Python
 	node-8-no-sr-mapping.py
 	node-8-shut-int-2.py
 	node-8-sr-mapping.py
-End of List
+End of Python List
 ------------------------------------------------
 
 Config TXT
@@ -185,6 +185,6 @@ Config TXT
 	node-8-no-sr-mapping.txt
 	node-8-shut-int-2.txt
 	node-8-sr-mapping.txt
-End of List
+End of config TXT List
 ------------------------------------------------
 

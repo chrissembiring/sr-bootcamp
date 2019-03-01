@@ -1,6 +1,14 @@
 # sr-bootcamp
 This is a Segment Routing Bootcamp material repository
 
+	python node-1-bgp-lu-prefix-sid.py 
+	--> python script connects to node-1, prompt authentication cisco/cisco and config bgp-lu-prefix-sid 
+	--> verify some show commands
+	--> end the script.
+	
+	more node-1-bgp-lu-prefix-sid.txt
+	--> show configuration command of bgp-lu-prefix-sid to node-1
+
 Python 
 ------------------------------------------------
  	node-1-bgp-lu-prefix-sid.py

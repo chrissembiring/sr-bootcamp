@@ -1,0 +1,23 @@
+router bgp 65000
+ ibgp policy out enforce-modifications
+ address-family ipv4 unicast
+  allocate-label all
+ !
+ neighbor 1.1.1.4
+  remote-as 65000
+  update-source Loopback0
+  address-family ipv4 labeled-unicast
+   route-reflector-client
+   next-hop-self
+  !
+ !
+ neighbor 1.1.1.5
+  remote-as 65000
+  update-source Loopback0
+  address-family ipv4 labeled-unicast
+   route-reflector-client
+   next-hop-self
+  !
+ !
+!
+end

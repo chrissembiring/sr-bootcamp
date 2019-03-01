@@ -10,8 +10,8 @@ Python
  	node-1-multi-domain.py
  	node-1-no-bgp-lu-prefix-sid.py
  	node-1-no-rsvpte-4.py
-  node-1-no-sr-mapping.py
-  node-1-no-srte-bsid-90001-to-node-4.py
+  	node-1-no-sr-mapping.py
+  	node-1-no-srte-bsid-90001-to-node-4.py
 	node-1-rsvpte-4.py
 	node-1-sr-mapping.py
 	node-1-srte-bsid-90001-to-node-4.py

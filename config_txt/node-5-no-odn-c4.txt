@@ -1,0 +1,6 @@
+segment-routing
+ traffic-eng
+  no on-demand color 4
+ !
+!
+end

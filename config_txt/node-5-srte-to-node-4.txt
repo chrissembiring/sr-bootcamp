@@ -1,0 +1,16 @@
+segment-routing
+ traffic-eng
+  policy node-4
+   candidate-paths
+    preference 100
+     dynamic
+      metric
+       type te
+      !
+     !
+    !
+   !
+  !
+ !
+!
+end

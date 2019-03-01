@@ -1,0 +1,115 @@
+vrf red
+ address-family ipv4 unicast
+  import route-target
+   45:45
+  !
+  export route-target
+   45:45
+  !
+ !
+!
+vrf blue
+ address-family ipv4 unicast
+  import route-target
+   450:450
+  !
+  export route-target
+   450:450
+  !
+ !
+!
+interface Loopback5
+ vrf red
+ ipv4 address 5.5.5.5 255.255.255.255
+!
+interface Loopback15
+ vrf blue 
+ ipv4 address 15.15.15.15 255.255.255.255
+!
+interface Loopback50
+ vrf red
+ ipv4 address 50.50.50.50 255.255.255.255
+!
+interface Loopback55
+ vrf red
+ ipv4 address 55.55.55.55 255.255.255.255
+!
+interface Loopback150
+ vrf blue
+ ipv4 address 150.150.150.150 255.255.255.255
+!
+interface Loopback155
+ vrf blue
+ ipv4 address 155.155.155.155 255.255.255.255
+!
+!
+extcommunity-set opaque 4
+  4
+end-set
+!
+extcommunity-set opaque 14
+  14
+end-set   
+!
+extcommunity-set opaque 40
+  40
+end-set
+!
+extcommunity-set opaque 44
+  44
+end-set
+!
+extcommunity-set opaque 140
+  140
+end-set
+!
+extcommunity-set opaque 144
+  144
+end-set
+!
+route-policy SET_COLOR_IN
+  if rd in (45:45) and destination in (4.4.4.4/32) then
+    set extcommunity color 4
+  elseif rd in (45:45) and destination in (40.40.40.40/32) then
+    set extcommunity color 4
+  elseif rd in (45:45) then
+    set extcommunity color 44
+  elseif rd in (450:450) and destination in (14.14.14.14/32) then
+    set extcommunity color 14
+  elseif rd in (450:450) and destination in (140.140.140.140/32) then
+    set extcommunity color 140
+  elseif rd in (450:450) then
+    set extcommunity color 144
+  else
+    pass
+  endif
+end-policy
+!
+router bgp 65000
+ neighbor-group RR-services-group
+  address-family vpnv4 unicast
+   route-policy SET_COLOR_IN in
+  !
+ !
+ vrf red
+  rd 45:45
+  address-family ipv4 unicast
+   redistribute connected
+  !
+ !
+ vrf blue
+  rd 450:450
+  address-family ipv4 unicast
+   redistribute connected
+  !       
+ !
+!
+mpls traffic-eng
+ interface GigabitEthernet0/0/0/0
+  admin-weight 1
+ !
+ interface GigabitEthernet0/0/0/1
+  admin-weight 2
+ !
+!
+end

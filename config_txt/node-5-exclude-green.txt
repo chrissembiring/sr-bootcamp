@@ -1,0 +1,27 @@
+segment-routing
+ traffic-eng
+  interface GigabitEthernet0/0/0/0
+   affinity
+    name green
+   !
+   metric 1
+  !
+  policy node-4
+   candidate-paths
+    preference 100
+     constraints
+      affinity
+       exclude-any
+        name green
+       !
+      !
+     !
+    !
+   !
+  !
+  affinity-map
+   name green bit-position 0
+  !
+ !
+!
+end       

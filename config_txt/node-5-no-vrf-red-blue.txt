@@ -1,0 +1,25 @@
+no vrf red
+no vrf blue
+no interface Loopback5
+no interface Loopback15
+no interface Loopback50
+no interface Loopback55
+no interface Loopback150
+no interface Loopback155
+no opaque-set 4
+no opaque-set 14
+no opaque-set 40
+no opaque-set 44
+no opaque-set 140
+no opaque-set 144
+no route-policy SET_COLOR_IN
+router bgp 65000
+ neighbor-group RR-services-group
+  address-family vpnv4 unicast
+   no route-policy SET_COLOR_IN in
+  !
+ !
+ no vrf red
+ no vrf blue
+!
+end

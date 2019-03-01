@@ -1,0 +1,13 @@
+no vrf red
+no vrf blue
+no interface Loopback4
+no interface Loopback14
+no interface Loopback40
+no interface Loopback44
+no interface Loopback140
+no interface Loopback144
+router bgp 65000
+ no vrf red
+ no vrf blue
+!
+end

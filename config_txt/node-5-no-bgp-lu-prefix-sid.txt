@@ -1,0 +1,10 @@
+no route-policy SID
+router bgp 65000
+ no ibgp policy out enforce-modifications
+ address-family ipv4 unicast
+  no network 1.1.1.5/32 route-policy SID(5)
+  no allocate-label all
+ !
+ no neighbor 1.1.1.1
+!
+end

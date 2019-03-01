@@ -1,0 +1,8 @@
+segment-routing
+ traffic-eng
+  no segment-list 4-up
+  no segment-list 4-down
+  no policy node-4
+ !
+!
+end

@@ -1,0 +1,17 @@
+router isis 1
+ address-family ipv4 unicast
+  no segment-routing mpls
+ !
+ interface Loopback0
+  address-family ipv4 unicast
+   no prefix-sid absolute 16002
+   no prefix-sid strict-spf absolute 17002
+  !
+ !
+ interface Loopback22
+  address-family ipv4 unicast
+   no prefix-sid absolute 16299
+  !
+ !
+!
+end

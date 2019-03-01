@@ -1,0 +1,7 @@
+interface Loopback4
+ shutdown
+!
+interface Loopback40
+ shutdown
+!
+end

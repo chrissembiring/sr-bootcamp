@@ -1,0 +1,18 @@
+segment-routing
+ traffic-eng
+  segment-list 4-5
+   index 10 address ipv4 10.4.7.7
+   index 20 mpls label 16005
+  !
+  policy node-5
+   color 5 end-point ipv4 1.1.1.5
+   candidate-paths
+    preference 100
+     explicit segment-list 4-5
+     !
+    !
+   !
+  !
+ !
+!
+end

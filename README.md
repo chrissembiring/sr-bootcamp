@@ -9,7 +9,7 @@ This is a Segment Routing Bootcamp material repository
 	more node-1-bgp-lu-prefix-sid.txt
 	--> show configuration command of bgp-lu-prefix-sid to node-1
 
-![alt text](https://github.com/hinwoto/sr-bootcamp/topo.png)
+![alt text](https://github.com/hinwoto/sr-bootcamp/blob/master/topo.png)
 
 Python 
 ------------------------------------------------
